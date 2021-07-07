@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="styles.css" >
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Zero-Two Project</title>
+</head>
+<body>
+
+  <div class="container">
+
+    <div id= "title">Zero Two Finance</div>
+    <div>
+      <img id="zeroTwo" src="./media/zeroTwo.gif" alt="zeroTwo dance">
+    </div>
+    <audio id="player" src="./media/zeroTwo.mp3"></audio>
+    <a onclick="toggle()"><i id="button1" class="fa fa-play-circle-o fa-2x" style="color: white"></i></a>
+    <div id="cuming">
+      Cuming soon on UniswapV3
+    </div>
+
+    <script>
+      var play = false;
+      var audio = document.getElementById('player');
+      function toggle() {
+        console.log(audio)
+        if (play) {
+          audio.pause();
+        }
+        else {
+          audio.play();
+        }
+      };
+      audio.onplaying = function() {
+        play = true;
+      };
+      audio.onpause = function() {
+        play = false;
+      };
+      $("#button1").click(function() {
+        $(this).toggleClass("fa-play-circle-o fa-pause-circle-o")
+      })
+    </script>
+  </div>
+
+</body>
+</html>
